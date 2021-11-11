@@ -1,0 +1,90 @@
+.row {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonStyles {
+  width: 50px;
+  height: 50px;
+}
+.buttonStyles:hover {
+  cursor: pointer;
+}
+.fontSize12 {
+  font-size: 12px;
+}
+.fontSize16 {
+  font-size: 24px;
+}
+.buttonPlusStyles {
+  background-color: #c05151;
+  color: white;
+  border: 2px solid #c05151;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.buttonMinusStyles {
+  background-color: white;
+  color: #c05151;
+  border: 2px solid #c05151;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.counterInputBox {
+  width: 50px;
+  height: 44px;
+  border-color: #c05151;
+  border-style: solid;
+  /* top, right, bottom, left - just like margin and padding */
+  border-width: 2px 0px 2px 0px;
+  /* border-top: 2px solid #c05151; */
+  /* border-bottom: 2px solid #c05151; */
+  /* border-left: none; */
+  /* border-right: none; */
+  text-align: center;
+  background-color: #f0b7b7;
+  color: #c05151;
+}
+.counterInputBox:hover {
+  border-color: #c05151;
+  border-style: solid;
+  /* top, right, bottom, left - just like margin and padding */
+  border-width: 2px 0px 2px 0px;
+}
+.row1 {
+  display: flex;
+}
+.column3 {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 33%;
+}
+.column34 {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 33%;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.loading::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 4px solid #dddddd;
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: loading 1s ease infinite;
+}
+.counterInputBox {
+  width: 50px;
+}
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}
