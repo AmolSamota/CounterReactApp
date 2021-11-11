@@ -76,14 +76,12 @@ const CounterValue = () => {
           <button onClick={Change} className="buttonStyles buttonMinusStyles">
             <div className="fontSize16">-</div>
           </button>
-          <b>
-            <input
-              className="counterInputBox"
-              type="text"
-              onChange={Change}
-              value={counter}
-            />{" "}
-          </b>
+          <input
+            className="counterInputBox"
+            type="text"
+            onChange={Change}
+            value={counter}
+          />
           <button onClick={Change} className="buttonStyles buttonPlusStyles">
             <div className="fontSize16">+</div>
           </button>
