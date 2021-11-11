@@ -63,7 +63,7 @@
 }
 
 .limitBox {
-  width: auto;
+  width: 60px;
   border: 2px solid #b24242;
   background-color: #fbe8e8;
   color: #b24242;
