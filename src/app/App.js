@@ -9,10 +9,10 @@ import CounterComponent from "../components/CounterComponent";
 import "../styles/App.css";
 
 const App = () => {
-  const [counter, setCounter] = useState(null);
+  const [counter, setCounter] = useState(1);
   const [loader, setLoader] = useState(false);
   return (
-    <div className="App">
+    <div className="body">
       <CounterValue
         counter={counter}
         loader={loader}

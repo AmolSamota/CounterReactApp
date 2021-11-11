@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // IMPORTS
 import React, { useState, useEffect } from "react";
 
@@ -68,7 +69,7 @@ const CounterValue = (props) => {
           Enter Counter Limit : &nbsp;
           <input
             type="number"
-            className=""
+            className="limitBox"
             onChange={LimitChange}
             value={limit}
           ></input>
