@@ -29,7 +29,7 @@ const CounterValue = (props) => {
       }
       const response = await counterApi.updateCounter(newCounter);
       if (response === null || response <= 0) {
-        setCounter(0);
+        setCounter(1);
       } else if (response >= limit) {
         setCounter(limit);
       } else {
