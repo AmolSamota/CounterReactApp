@@ -1,5 +1,15 @@
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.fontSize12 {
+  height: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.fontSize21 {
+  font-size: 21px;
+}
 .row {
-  font: ;
   padding: 6px;
   display: flex;
   align-items: center;
@@ -9,26 +19,19 @@
 .buttonStyles {
   width: 60px;
   height: 56px;
+  font-size: 21px;
 }
+
 .buttonStyles:hover {
   cursor: pointer;
 }
-.fontSize12 {
-  height: 16px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #000000;
-}
-.fontSize16 {
-  font-size: 24px;
-}
+
 .buttonPlusStyles {
   background-color: #b24242;
   color: white;
   border: 2px solid #b24242;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
 }
+
 .buttonMinusStyles {
   background-color: white;
   color: #b24242;
@@ -36,37 +39,28 @@
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
 }
+
 .counterInputBox {
-  width: 60px;
+  width: 68px;
   height: 50px;
   border-color: #b24242;
   border-style: solid;
   border-width: 2px 0px 2px 0px;
   text-align: center;
   font-weight: 900;
-  font-size: 21px;
   background-color: #fbe8e8;
   color: #b24242;
 }
-.counterInputBox:hover {
-  border-color: #b24242;
-  border-style: solid;
-  /* top, right, bottom, left - just like margin and padding */
-  border-width: 2px 0px 2px 0px;
+.counterInputBox:focus {
+  outline: none;
 }
-.row1 {
-  display: flex;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.column3 {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 33%;
-}
-.column34 {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 33%;
-}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -81,9 +75,7 @@
   border-radius: 50%;
   animation: loading 1s ease infinite;
 }
-.counterInputBox {
-  width: 50px;
-}
+
 @keyframes loading {
   to {
     transform: rotate(1turn);

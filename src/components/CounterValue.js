@@ -1,30 +1,39 @@
+// IMPORTS
 import React, { useState, useEffect } from "react";
-import CounterComponent from "./CounterComponent";
-// import styles from "./index.module.css";
+
+// ROUTES
 const counterApi = require("../routes/counterRoutes");
 
-const CounterValue = () => {
-  const [counter, setCounter] = useState(null);
-  const [loader, setLoader] = useState(false);
+const CounterValue = (props) => {
+  const [limit, setLimit] = useState(1000);
+  const { counter, loader, setCounter, setLoader } = props;
+
+  const LimitChange = async (e) => {
+    let newLimit = e.target.value >= 0 ? Number(e.target.value) : 1000;
+    setLimit(newLimit);
+  };
 
   const Change = async (e) => {
     try {
       setLoader(true);
       let newCounter = counter;
-      if (e.target.innerText === "-") {
-        newCounter--;
+      if (e.target.type === "number") {
+        newCounter = e.target.value ? Number(e.target.value) : 0;
       } else {
-        newCounter++;
+        if (e.target.innerText === "-") {
+          newCounter--;
+        } else {
+          newCounter++;
+        }
       }
       const response = await counterApi.updateCounter(newCounter);
       if (response === null || response <= 0) {
-        setCounter(1);
-      } else if (response >= 1000) {
-        setCounter(1000);
+        setCounter(0);
+      } else if (response >= limit) {
+        setCounter(limit);
       } else {
         setCounter(response);
       }
-      console.log(response, "changed_val");
       setLoader(false);
     } catch (err) {
       console.log(err);
@@ -39,8 +48,8 @@ const CounterValue = () => {
         let counter =
           response === null || response <= 0
             ? 1
-            : response >= 1000
-            ? 1000
+            : response >= limit
+            ? limit
             : response;
         setCounter(counter);
         setLoader(false);
@@ -52,18 +61,18 @@ const CounterValue = () => {
     setLoader(true);
   }, []);
 
-  // component banansa
-  // styling
-  // loader
-  // input tag
-  // remove console log
-
-  // -- ternary operator
-  // className
-
   return (
     <div>
       <div className="container">
+        <div className="row fontSize12">
+          Enter Counter Limit : &nbsp;
+          <input
+            type="number"
+            className=""
+            onChange={LimitChange}
+            value={limit}
+          ></input>
+        </div>
         <div className="row">
           {loader && (
             <>
@@ -74,20 +83,17 @@ const CounterValue = () => {
         </div>
         <div className="row">
           <button onClick={Change} className="buttonStyles buttonMinusStyles">
-            <div className="fontSize16">-</div>
+            -
           </button>
           <input
-            className="counterInputBox"
-            type="text"
+            className="counterInputBox fontSize21"
+            type="number"
             onChange={Change}
             value={counter}
           />
           <button onClick={Change} className="buttonStyles buttonPlusStyles">
-            <div className="fontSize16">+</div>
+            +
           </button>
-        </div>
-        <div className="row">
-          <CounterComponent counter={counter}></CounterComponent>
         </div>
       </div>
     </div>

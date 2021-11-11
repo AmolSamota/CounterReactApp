@@ -2,11 +2,11 @@ import React from "react";
 
 const CounterComponent = (props) => {
   const { counter } = props;
-  console.log(props, "s");
   return (
-    <div className="fontSize12">
-      counter value <br />
-      {counter}
+    <div className="container">
+      <div className="row">
+        <div className="fontSize12">Counter value : {counter}</div>
+      </div>
     </div>
   );
 };
